@@ -290,6 +290,28 @@ nav {
     color: var(--text-muted);
 }
 
+/* Pre-Contact CTA Section */
+.pre-contact-cta {
+    padding: 8rem 0;
+    background: linear-gradient(rgba(27, 48, 34, 0.8), rgba(27, 48, 34, 0.8)), 
+                url('imgs/687871165_26888999370725233_4027748456419676326_n.jpg') center/cover no-repeat fixed;
+    color: var(--white);
+}
+
+.pre-contact-cta h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.pre-contact-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Contact Section */
 .contact {
     padding: 8rem 0;
@@ -530,8 +552,16 @@ nav {
         font-size: 1.1rem;
     }
     
-    .about, .seasonal, .contact {
+    .about, .seasonal, .pre-contact-cta, .contact {
         padding: 4rem 0;
+    }
+
+    .pre-contact-cta h2 {
+        font-size: 2rem;
+    }
+
+    .pre-contact-cta p {
+        font-size: 1rem;
     }
 
     .about-grid, .contact-grid, .products-grid {
