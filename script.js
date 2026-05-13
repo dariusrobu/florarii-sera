@@ -50,15 +50,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Mobile Menu Toggle (Simplified)
-    const mobileToggle = document.querySelector('.mobile-menu-toggle');
-    if (mobileToggle) {
-        mobileToggle.addEventListener('click', () => {
-            alert('Meniu mobil - În varianta demo, navigația este optimizată pentru scroll direct.');
-        });
-    }
+    // Mobile Drawer Logic
+    const menuToggle = document.getElementById('menu-toggle');
+    const closeDrawer = document.getElementById('close-drawer');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const drawerOverlay = document.getElementById('drawer-overlay');
+    const drawerLinks = document.querySelectorAll('.drawer-links a');
 
-    // Add a simple parallax effect to hero background
+    const toggleDrawer = () => {
+        mobileDrawer.classList.toggle('active');
+        drawerOverlay.classList.toggle('active');
+        document.body.style.overflow = mobileDrawer.classList.contains('active') ? 'hidden' : '';
+    };
+
+    if (menuToggle) menuToggle.addEventListener('click', toggleDrawer);
+    if (closeDrawer) closeDrawer.addEventListener('click', toggleDrawer);
+    if (drawerOverlay) drawerOverlay.addEventListener('click', toggleDrawer);
+
+    // Close drawer when a link is clicked
+    drawerLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileDrawer.classList.remove('active');
+            drawerOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+
+    // Smooth Scrolling for all internal links
+
     window.addEventListener('scroll', () => {
         const hero = document.querySelector('.hero');
         const scrollValue = window.scrollY;
