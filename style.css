@@ -487,6 +487,11 @@ nav {
 
 /* Responsive Design Improvements */
 @media (max-width: 768px) {
+    header {
+        height: 70px;
+        background-color: var(--bg-cream);
+    }
+
     nav {
         height: 70px;
         padding: 0 1.5rem;
@@ -514,6 +519,7 @@ nav {
     
     .floating-cta {
         display: flex;
+        z-index: 3000;
     }
 
     .hero h1 {
